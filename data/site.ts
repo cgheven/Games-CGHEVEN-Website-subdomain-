@@ -1,0 +1,5 @@
+export const PUBLISHER = "CGHEVEN"
+export const SUPPORT_EMAIL = "support@cgheven.com"
+export const MAIN_SITE = "https://cgheven.com"
+export const SITE_URL = "https://games.cgheven.com"
+export const LAST_UPDATED = "November 1, 2026"
