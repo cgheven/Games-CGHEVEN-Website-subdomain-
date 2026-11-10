@@ -98,6 +98,24 @@ export default function PrivacyPage() {
 
       <h2>Contact us</h2>
       <p>Questions about this policy: <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a></p>
+
+      <h2>Consent and your choices</h2>
+      <p>
+        In the EEA and UK, and wherever the law requires it, we ask for your consent through Google&rsquo;s consent form before showing personalised ads or collecting analytics.
+        You can review or change your choice in the game under Settings, then Privacy options.
+      </p>
+
+      <h2>Reminders</h2>
+      <p>
+        Some games can send an optional daily reminder notification. Reminders are scheduled on your device and no information about them is sent to us.
+        You can turn them off in the game&rsquo;s Settings or in Android settings.
+      </p>
+
+      <h2>Questions about your data</h2>
+      <p>
+        We have no accounts. To ask what data may relate to you, email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+        Advertising and analytics data are held by Google under its own policies, and you can reset your advertising ID in Android settings.
+      </p>
     </LegalPage>
   )
 }
