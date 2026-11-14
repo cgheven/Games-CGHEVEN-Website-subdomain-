@@ -1,0 +1,28 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cgheven.tankwarfare",
+      "sha256_cert_fingerprints": [
+        "A5:29:0C:6F:89:C4:B9:CC:09:BA:A3:BB:4F:5E:47:C0:43:09:57:8A:DD:96:8F:8C:96:EA:3E:7A:BD:B8:03:18",
+        "10:27:66:A6:64:E2:96:1D:24:A9:EB:BB:5A:BB:0C:69:BE:12:97:0F:35:BD:AB:A7:8B:CE:40:7D:CC:70:C6:49"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cgheven.roguebreach",
+      "sha256_cert_fingerprints": [
+        "AF:82:E5:CB:17:24:FA:B7:74:AC:91:AB:EF:F5:71:58:30:20:7B:4E:44:E9:32:49:C2:C6:91:9F:AC:13:AF:D8",
+        "10:27:66:A6:64:E2:96:1D:24:A9:EB:BB:5A:BB:0C:69:BE:12:97:0F:35:BD:AB:A7:8B:CE:40:7D:CC:70:C6:49"
+      ]
+    }
+  }
+]
