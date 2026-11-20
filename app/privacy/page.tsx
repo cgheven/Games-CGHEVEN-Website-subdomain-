@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { LegalPage } from "@/components/legal-page"
-import { LAST_UPDATED, SUPPORT_EMAIL } from "@/data/site"
+import { SUPPORT_EMAIL } from "@/data/site"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -8,46 +8,83 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 }
 
+const PRIVACY_UPDATED = "November 20, 2026"
+
+const DETAILS = [
+  { label: "Developer (Google Play)", value: "CGHEVEN" },
+  { label: "Site", value: "games.cgheven.com" },
+  { label: "Covers", value: "games.cgheven.com and all CGHEVEN Android games" },
+]
+
+const GAMES = [
+  { name: "Rogue Breach: Dungeon Shooter", pkg: "com.cgheven.roguebreach" },
+  { name: "Heir of Thunder" },
+  { name: "Huemosaic" },
+  { name: "Jigsaw Gallery" },
+  { name: "Match Haven (Tidewell)" },
+  { name: "Math Blast: Falling Numbers" },
+  { name: "Street Rider" },
+  { name: "Vending Empire" },
+]
+
 const SERVICES = [
-  { name: "Google AdMob", purpose: "In-app advertising", url: "https://policies.google.com/privacy", label: "policies.google.com/privacy" },
-  { name: "Firebase (Analytics, Crashlytics)", purpose: "Usage analytics and crash reporting", url: "https://firebase.google.com/support/privacy", label: "firebase.google.com/support/privacy" },
-  { name: "Google Play Billing", purpose: "In-app purchases and subscriptions", url: "https://play.google/play-terms", label: "play.google/play-terms" },
+  { name: "Google AdMob", purpose: "Advertising", url: "https://policies.google.com/privacy", label: "Google Privacy Policy" },
+  { name: "Firebase (Analytics & Crashlytics)", purpose: "Analytics, crash reporting", url: "https://firebase.google.com/support/privacy", label: "Firebase Privacy" },
+  { name: "Google Play Billing", purpose: "In-app purchases", url: "https://policies.google.com/privacy", label: "Google Privacy Policy" },
 ]
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Privacy Policy" updated={LAST_UPDATED} current="/privacy">
-      <p>
-        This policy covers games.cgheven.com and the Android games listed on it, published by CGHEVEN (&ldquo;CGHEVEN,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;).
-        CGHEVEN is not yet a separate registered legal entity &mdash; the games and site are currently operated by Musab Khan.
+    <LegalPage title="CGHEVEN Games Privacy Policy" updated={PRIVACY_UPDATED} current="/privacy">
+      <p className="text-sm text-muted">
+        Operated by <strong className="text-text">Musab Khan</strong>, trading as <strong className="text-text">CGHEVEN</strong>
       </p>
 
-      <h2>What this covers</h2>
+      <dl className="m-0 grid gap-2 rounded-2xl border border-line border-l-4 border-l-teal bg-surface p-5 text-sm sm:grid-cols-[max-content_1fr] sm:gap-x-6">
+        {DETAILS.map((d) => (
+          <div key={d.label} className="contents">
+            <dt className="text-muted">{d.label}</dt>
+            <dd className="m-0 font-mono text-text">{d.value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <h2>What this policy covers</h2>
       <p>
-        Applies to visitors of games.cgheven.com and players of the Android games listed there, and future titles.
+        This policy covers games.cgheven.com and the Android games published by CGHEVEN, listed below, and any future CGHEVEN titles.
+        CGHEVEN is not yet a separate registered legal entity; the games and this site are operated by Musab Khan.
       </p>
+
+      <h2>Games covered by this policy</h2>
+      <ul className="rounded-2xl border border-line !list-none !gap-0 !pl-0">
+        {GAMES.map((g) => (
+          <li key={g.name} className="flex flex-wrap items-baseline justify-between gap-x-4 border-t border-line px-4 py-3 first:border-t-0">
+            <span className="text-text">{g.name}</span>
+            <span className="font-mono text-xs text-muted">{g.pkg ?? "package to be added at release"}</span>
+          </li>
+        ))}
+      </ul>
+      <p>As additional CGHEVEN games are published, they are covered by this same policy from their release date.</p>
 
       <h2>Information we collect</h2>
-      <p>We don&rsquo;t require an account or any personal information to play. The following is collected automatically through the services our games use:</p>
+      <p>No account or personal information is required to play. Depending on the game, we may collect:</p>
       <ul>
-        <li><strong>Advertising data (Google AdMob):</strong> advertising ID, device and app information, approximate location (for ad relevance), and ad interaction data.</li>
-        <li><strong>Analytics and crash data (Firebase Analytics / Crashlytics):</strong> app usage events (sessions, screens viewed, in-game actions), device model, OS version, and crash logs.</li>
-        <li><strong>Purchase data (Google Play Billing):</strong> for games with in-app purchases or subscriptions (e.g. Gallery Pass), the transaction is processed entirely by Google Play. We receive confirmation a purchase was made, not your payment details.</li>
-        <li><strong>Information you send us:</strong> if you email support or use a contact form, we receive whatever you include (name, email, message).</li>
+        <li><strong>Advertising data</strong>, through Google AdMob, to show and measure ads</li>
+        <li><strong>Analytics and crash data</strong>, through Firebase Analytics and Crashlytics, to understand feature use and fix bugs</li>
+        <li><strong>Purchase confirmations</strong>, through Google Play Billing, to deliver in-app purchases and prevent fraud</li>
+        <li><strong>Support request information</strong>, if you contact us directly</li>
       </ul>
-      <p>We do not collect your name, government ID, precise location, or payment card details directly.</p>
 
       <h2>How we use this information</h2>
       <ul>
-        <li>Keep the games running and fix bugs and crashes</li>
-        <li>Understand which features are used so we can improve the games</li>
-        <li>Show ads and measure ad performance</li>
-        <li>Process purchases and subscriptions</li>
-        <li>Respond to support requests</li>
+        <li>Running, maintaining, and fixing the games</li>
+        <li>Understanding how features are used</li>
+        <li>Showing and measuring advertising</li>
+        <li>Processing and verifying in-app purchases</li>
+        <li>Responding to support requests</li>
       </ul>
 
       <h2>Third-party services</h2>
-      <p>We use the following third-party services, each governed by its own privacy policy:</p>
       <div className="overflow-x-auto rounded-2xl border border-line">
         <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
           <thead className="bg-surface text-xs uppercase tracking-[0.08em] text-muted">
@@ -58,64 +95,58 @@ export default function PrivacyPage() {
               <tr key={s.name} className="border-t border-line align-top">
                 <th scope="row" className="px-4 py-3 font-semibold text-text">{s.name}</th>
                 <td className="px-4 py-3">{s.purpose}</td>
-                <td className="px-4 py-3"><a href={s.url} target="_blank" rel="noopener noreferrer" className="break-all">{s.label}</a></td>
+                <td className="px-4 py-3"><a href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a></td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <p>
-        Google&rsquo;s use of advertising data is described at{" "}
-        <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses data</a>.
-      </p>
 
       <h2>Children&rsquo;s privacy</h2>
       <p>
-        Our games are built for a general audience and are not directed at children under 13. We do not knowingly collect personal information from children under 13.
-        If you believe a child has provided us data, contact us below and we will remove it.
+        Our games are not directed at children under 13. If we learn that we have collected data from a child under 13, we will remove it on request.
       </p>
 
       <h2>Your choices</h2>
       <ul>
-        <li><strong>Personalized ads:</strong> opt out via your device&rsquo;s ad settings (Android: Settings &rarr; Google &rarr; Ads &rarr; &ldquo;Opt out of Ads Personalization&rdquo;) or reset your advertising ID.</li>
-        <li><strong>Analytics:</strong> limiting ad tracking in your device settings also reduces data shared with Firebase/AdMob.</li>
-        <li>Uninstalling a game stops further data collection from that app.</li>
+        <li>Opt out of personalized ads in your device&rsquo;s ad settings</li>
+        <li>Reset your advertising ID at any time</li>
+        <li>Uninstall the game to stop all data collection from that app</li>
       </ul>
 
       <h2>Data retention and sharing</h2>
       <p>
-        We retain data only as long as needed for the purposes above. We do not sell your data. We share it only with the service providers listed above, each bound by their own terms.
+        We keep data only as long as needed for the purposes above. We do not sell your data. We share data only with the service providers listed in this policy.
       </p>
 
       <h2>Security</h2>
-      <p>We rely on the security practices of Google Play, Firebase, and AdMob for data in transit and at rest. No method of transmission is 100% secure.</p>
+      <p>We rely on the security practices of Google Play, Firebase, and AdMob to help protect data processed through those services.</p>
 
-      <h2>Changes to this policy</h2>
+      <h2>Consent and your choices (EEA / UK)</h2>
       <p>
-        We may update this policy as the games or services change. The &ldquo;Last updated&rdquo; date above reflects the latest revision.
-        Continued use after a change means you accept the update.
-      </p>
-
-      <h2>Contact us</h2>
-      <p>Questions about this policy: <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a></p>
-
-      <h2>Consent and your choices</h2>
-      <p>
-        In the EEA and UK, and wherever the law requires it, we ask for your consent through Google&rsquo;s consent form before showing personalised ads or collecting analytics.
-        You can review or change your choice in the game under Settings, then Privacy options.
+        If you are in the EEA or UK, consent for personalized advertising and analytics is requested through Google&rsquo;s consent form on first launch.
+        You can change your choices at any time in-game under <strong className="text-text">Settings &rarr; Privacy options</strong>.
       </p>
 
       <h2>Reminders</h2>
       <p>
-        Some games can send an optional daily reminder notification. Reminders are scheduled on your device and no information about them is sent to us.
-        You can turn them off in the game&rsquo;s Settings or in Android settings.
+        Optional daily reminder notifications, where offered, are scheduled locally on your device. No information about these reminders is sent to CGHEVEN.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        We may update this policy from time to time. Continued use of a game or this site after an update means you accept the revised policy.
       </p>
 
       <h2>Questions about your data</h2>
       <p>
-        We have no accounts. To ask what data may relate to you, email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
-        Advertising and analytics data are held by Google under its own policies, and you can reset your advertising ID in Android settings.
+        Our games do not use accounts, so we hold no per-player profile beyond what&rsquo;s described above.
+        Requests about advertising or analytics data should be directed to Google, since that data is held by Google on our behalf.
+        For anything else, contact us below.
       </p>
+
+      <h2>Contact us</h2>
+      <p>Questions about this policy: <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a></p>
     </LegalPage>
   )
 }
