@@ -36,10 +36,6 @@ const SERVICES = [
 export default function PrivacyPage() {
   return (
     <LegalPage title="CGHEVEN Games Privacy Policy" updated={PRIVACY_UPDATED} current="/privacy">
-      <p className="text-sm text-muted">
-        Operated by <strong className="text-text">Musab Khan</strong>, trading as <strong className="text-text">CGHEVEN</strong>
-      </p>
-
       <dl className="m-0 grid gap-2 rounded-2xl border border-line border-l-4 border-l-teal bg-surface p-5 text-sm sm:grid-cols-[max-content_1fr] sm:gap-x-6">
         {DETAILS.map((d) => (
           <div key={d.label} className="contents">
