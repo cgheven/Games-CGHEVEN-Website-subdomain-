@@ -46,7 +46,7 @@ export default function TermsPage() {
 
       <h2>Intellectual property</h2>
       <p>
-        All game content &mdash; code, art, music, characters, names, and designs &mdash; is owned by CGHEVEN (operated by Musab Khan) unless otherwise credited. Nothing in these terms transfers that ownership to you.
+        All game content &mdash; code, art, music, characters, names, and designs &mdash; is owned by CGHEVEN unless otherwise credited. Nothing in these terms transfers that ownership to you.
       </p>
 
       <h2>No warranty</h2>

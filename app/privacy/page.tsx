@@ -48,7 +48,6 @@ export default function PrivacyPage() {
       <h2>What this policy covers</h2>
       <p>
         This policy covers games.cgheven.com and the Android games published by CGHEVEN, listed below, and any future CGHEVEN titles.
-        CGHEVEN is not yet a separate registered legal entity; the games and this site are operated by Musab Khan.
       </p>
 
       <h2>Games covered by this policy</h2>
