@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ArrowRight, Cpu, Smartphone, Store } from "lucide-react"
 import { LegalPage } from "@/components/legal-page"
 import { SUPPORT_EMAIL } from "@/data/site"
+import { FounderSection } from "@/components/founder-section"
 
 export const metadata: Metadata = {
   title: "About",
@@ -34,11 +35,13 @@ export default function AboutPage() {
         ))}
       </div>
 
+      <FounderSection />
+
       <h2>Contact / Support</h2>
       <p>Support email: <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a></p>
       <p>For: bug reports, purchase or billing issues (we&rsquo;ll point you to Google Play where needed), privacy requests, general questions.</p>
       <div className="mt-2">
-        <Link href="/contact" className="inline-flex items-center gap-2 rounded-xl bg-orange px-6 py-3.5 text-[15px] font-bold text-black no-underline transition hover:brightness-110 hover:no-underline">
+        <Link href="/contact" className="inline-flex items-center gap-2 rounded-xl bg-orange px-6 py-3.5 text-[15px] font-bold text-black! no-underline transition hover:brightness-110 hover:no-underline">
           Get in touch <ArrowRight aria-hidden="true" size={18} />
         </Link>
       </div>
