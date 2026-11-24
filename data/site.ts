@@ -5,7 +5,6 @@ export const SITE_URL = "https://games.cgheven.com"
 export const LAST_UPDATED = "November 1, 2026"
 
 /* The founder: the same information as https://cgheven.com/ammar-khan */
-export const HIRE_HREF = "https://www.upwork.com/freelancers/~01cef6a1965f6ab3e3?mp_source=share"
 
 export const FOUNDER = {
   name: "Ammar Khan",
@@ -17,11 +16,6 @@ export const FOUNDER = {
   youtube: "https://youtube.com/@cghevenofficial",
 }
 
-export const FOUNDER_STATS = [
-  { value: "841+", label: "assets made" },
-  { value: "1,250+", label: "Patreon members" },
-  { value: "8", label: "free add-ons" },
-]
 
 export const FOUNDER_STEPS: { title: string; text: string; tag?: string }[] = [
   { title: "The problem", text: "Good VFX assets were locked behind expensive packs. Most artists I knew, especially students, could not afford them." },
@@ -37,4 +31,10 @@ export const FOUNDER_SOCIALS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/ammarkhanim" },
   { label: "Facebook", href: "https://www.facebook.com/Ammarkhanim/" },
   { label: "Email", href: "mailto:contact@cgheven.com" },
+]
+
+export const FOUNDER_MAKES = [
+  { tag: "ASSETS", title: "Real VFX, ready to drop in", text: "Smoke, fire, explosions, steam and holograms in MP4, ProRes 4444 and EXR." },
+  { tag: "FREE ADD-ONS", title: "Use them inside your app", text: "Free add-ons for After Effects, Premiere Pro, Blender, DaVinci Resolve and more." },
+  { tag: "FREE TUTORIALS", title: "Learn how they are made", text: "Short lessons and full courses in English and Urdu." },
 ]
